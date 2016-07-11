@@ -1,6 +1,17 @@
+# gpx to crs conversion tool
+
+# for converting gpx files for use on computrainer multirider systems
+# i found converting the data straight up, the computrainer doesn't
+# like tons of grade changes, so we apply some linear smoothing
+
 import math, numpy, matplotlib
 from xml.dom import minidom
 from array import array
+
+
+# set this to your gpx file
+xmldoc = minidom.parse('doink.xml')
+
 
 
 # linear smooth func. from http://www.scipy.org/Cookbook/SignalSmooth
@@ -75,7 +86,6 @@ def coords_to_feet((lat1, long1),(lat2, long2)):
 	return distance * 6371
 
 
-xmldoc = minidom.parse('doink.xml')
 coordlist = xmldoc.getElementsByTagName('trkpt')
 lat1 = None;
 long1 = None;
