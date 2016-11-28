@@ -141,7 +141,6 @@ plt.savefig('out.png')
 simplegraph = []
 dis = []
 ele = []
-grp = 3
 for i,(n,m) in enumerate(zip(coords,a)):
 	if len(dis) > 5:
 		avg = numpy.average(ele)
