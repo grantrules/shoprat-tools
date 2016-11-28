@@ -95,7 +95,7 @@ elevation = []
 
 for coord in coordlist:
 	ele = float(coord.getElementsByTagName('ele')[0].firstChild.nodeValue)
-	(lat2, long2) = (float(coord.attributes["lat"].value), float(coord.attributes["lon"].value))
+	(lat2, long2) = tuple(map(lambda x: float(coord.attributes[x].value), ["lat", "lon"]))
 	if lat1 != None and (lat1, long1) != (lat2, long2):
 		dif = coords_to_feet((lat1, long1), (lat2, long2))
 		coords.append(dif)
