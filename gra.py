@@ -11,6 +11,10 @@ import urllib, http.cookiejar, re
 GRA_USERNAME = ''
 GRA_PASSWORD = ''
 
+if GRA_USERNAME == '' or GRA_PASSWORD == '':
+        print("Hey doofus, edit this file first and put your login info")
+        quit()
+
 class Course:
         def __init__(self, title, coursenum, url):
                 self.title = title
