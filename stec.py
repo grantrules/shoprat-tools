@@ -9,7 +9,7 @@ from random import choice
 # ...
 # sorry
 
-# set these to your prophet user and pass
+# set these to your s-tec user and pass
 
 USERNAME = ""
 PASSWORD = ""
